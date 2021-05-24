@@ -1,18 +1,18 @@
-const { Query } = require("../models");
+import Query from "../models";
 
 const getAll = async () => {
     return Query("SELECT * FROM quests");
 };
 
 const getOne = async (id) => {
-    return Query("SELECT * FROM employees WHERE idquests = ?", [id])
+    return Query("SELECT * FROM quests WHERE idquests = ?", [id])
 };
 
 const getActiveQuests = async () => {
     return Query("SELECT * FROM quests WHERE Active = 1");
 };
 
-module.exports = {
+export {
     getAll,
     getOne,
    getActiveQuests,

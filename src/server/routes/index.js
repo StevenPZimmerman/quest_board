@@ -1,5 +1,5 @@
 const express = require("express");
-const {getAll} = require("../queries/get")
+const {getAll} = require("../db/queries/get")
 
 const router = express.Router();
 
@@ -12,4 +12,4 @@ next(error);
    }
 });
 
-module.exports = {router};
+export default router;

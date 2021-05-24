@@ -20,4 +20,4 @@ const Query = (query, values) => {
     });
 };
 
-module.exports = { Query,  };
+export default Query;

@@ -43,8 +43,17 @@ const clientConfig = {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
+      {
+        test: /\.svg$/,
+        use: ["svg-url-loader"],
+      },
+      {
+        test: /\.(png|jpe?g|jpg)$/,
+        use: ["resolve-url-loader"],
+      },
     ],
   },
+
   resolve: {
     extensions: [".jsx", ".js", ".css", ".scss"],
   },
@@ -54,4 +63,4 @@ const clientConfig = {
   },
 };
 
-module.exports =  [serverConfig, clientConfig] ;
+module.exports = [serverConfig, clientConfig];

@@ -1,3 +1,20 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
-//custom styling
+.navBar {
+    width:100vw ;
+    height: 11vw;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+   
+    padding-bottom: 1%;
+    font-size: 120%;
+  }
+
+ 
+
+//   .characterSheet{
+//       background-image: url("../public/img/Sheet.png");
+//   }
+

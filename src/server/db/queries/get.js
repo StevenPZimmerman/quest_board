@@ -17,8 +17,15 @@ const getCharacterStats = async () => {
 }
 
 const getCharacterShop = async () => {
-    return Query("SELECT * FROM neal_family_equipment WHERE Equipped = 0")
+    return Query("SELECT * FROM neal_family_inventory")
 }
+
+
+
+
+
+
+
 
 export {
     getAll,

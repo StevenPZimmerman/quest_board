@@ -6,6 +6,7 @@ import Home from "./views/Home";
 import Character from "./views/Character";
 import Shop from "./views/Shop";
 import Dungeon from "./views/Dungeon";
+import Login from "./views/Login"
 
 function App() {
   return (
@@ -32,6 +33,13 @@ function App() {
               <Route exact path="/Dungeon">
                 <Dungeon />
               </Route>
+
+              <Route exact path="/Login">
+                <Login />
+              </Route>
+
+
+
             </Switch>
           </BrowserRouter>
         </div>

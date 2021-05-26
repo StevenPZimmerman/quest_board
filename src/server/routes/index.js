@@ -1,5 +1,5 @@
 const express = require("express");
-const {getAll, getActiveQuests, getCharacterStats, getCharacterShop} = require("../db/queries/get")
+const {getAll, getActiveQuests, getCharacterStats, getCharacterShop, getCharacterNames} = require("../db/queries/get")
 
 const router = express.Router();
 
@@ -29,6 +29,16 @@ res.json(data);
 next(error);
    }
 });
+
+router.get("/characters", async (req, res, next) => {
+   try{
+let data = await getCharacterNames();
+res.json(data);
+   }catch (error) {
+next(error);
+   }
+});
+
 
 
 export default router;

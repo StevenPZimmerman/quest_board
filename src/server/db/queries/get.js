@@ -20,12 +20,14 @@ const getCharacterShop = async () => {
     return Query("SELECT * FROM neal_family_inventory")
 }
 
-const example = async () => {
-    return Query("UPDATE something FROM table WHERE something; UPDATE something FROM sametable WHERE something else")
+const getCharacterNames = async () => {
+    return Query("SELECT CharacterName FROM family")
 }
 
 
-
+const example = async () => {
+    return Query("UPDATE something FROM table WHERE something; UPDATE something FROM sametable WHERE something else")
+}
 
 
 
@@ -35,4 +37,5 @@ export {
    getActiveQuests,
    getCharacterStats,
    getCharacterShop,
+   getCharacterNames,
 }

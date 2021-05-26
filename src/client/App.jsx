@@ -7,6 +7,8 @@ import Character from "./views/Character";
 import Shop from "./views/Shop";
 import Dungeon from "./views/Dungeon";
 import Login from "./views/Login";
+import Manager from "./views/Manager";
+import PurchaseItem from "./views/PurchaseItem";
 
 function App() {
   return (
@@ -37,6 +39,21 @@ function App() {
               <Route exact path="/Login">
                 <Login />
               </Route>
+
+              <Route exact path="/Manager">
+                <Manager />
+              </Route>
+
+              <Route path="/PurchaseItem"
+              exact
+              component={props => {
+                return(
+                  <PurchaseItem {...props} />
+                );
+              }}/>
+                <PurchaseItem />
+              {/* </Route> */}
+
             </Switch>
           </BrowserRouter>
         </div>

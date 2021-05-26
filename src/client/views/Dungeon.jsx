@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../scss/App.scss";
+import { useHistory } from "react-router";
 
 const Dungeon = () => {
   const [shop, setShop] = React.useState([]);
@@ -46,40 +47,40 @@ const Dungeon = () => {
               <div className="card-body">
                 <div className="itemCard">
                   <div className="itemCardInfo">
-                <h3 className="card-title">{equip.InventoryName}</h3>
-                <h5 className="card-title">{equip.Price}</h5>
-                <button
-                  onClick={() => {
-                    if (equip.Price > silver[0]) {
-                      alert("not enough silver");
-                    } else {
-                      alert("all sales are final");
-                    }
-                  }}
-                >
-                  Purchase
-                </button>
-                <p>{equip.InventoryID}</p>
-                    </div>
-                    <div className="itemCardImage">
-                <img className="image" src={equip.Image} alt={equip.InventoryName}/>
+                    <h3 className="card-title">{equip.InventoryName}</h3>
+                    <h5 className="card-title">{equip.Price}</h5>
+                    <NavLink
+                      to={{
+                        pathname:
+                          equip.Price <= silver[0]
+                            ? "/PurchaseItem"
+                            : "/Dungeon",
+                        state: { Price: equip.Price, ID: equip.InventoryID },
+                      }}
+                    >
+                      Purchase
+                    </NavLink>
 
-                    </div>
-
-                
-              </div>
+                    <p>{equip.InventoryID}</p>
+                  </div>
+                  <div className="itemCardImage">
+                    <img
+                      className="image"
+                      src={equip.Image}
+                      alt={equip.InventoryName}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           );
         }
       })}
       <Link to="/Login" className="activeNav" className="navLink">
-        <img className="image" src="../img/sign_1.jpg" alt="welcomeImage" />
+        <img className="image" src="../img/ManageSign.jpg" alt="welcomeImage" />
       </Link>
     </div>
   );
 };
 
 export default Dungeon;
-
-

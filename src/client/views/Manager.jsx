@@ -17,7 +17,14 @@ const Manager = () => {
 <h4>Manage Quests</h4>
 <br />
 <br />
-<Link to= "/AllQuestsActive">All Quests Active</Link>
+
+<div className="flexColumn">
+
+<Link to= "/AllQuestsActive">Make All Quests Active</Link>
+<Link to= "/AllQuestsInactive">Make All Quests Inactive</Link>
+<Link to= "/AllInactiveQuests">Make Quests Active</Link>
+<Link to= "/AllActiveQuests">Make Quests Inactive</Link>
+</div>
 
 
     

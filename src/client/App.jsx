@@ -13,11 +13,16 @@ import Currency from "./views/Currency";
 import Documentation from "./views/Documentation";
 import QuestComplete from "./views/QuestComplete";
 import AllQuestsActive from "./views/AllQuestsActive";
+import AllQuestsInactive from "./views/AllQuestsInactive";
 import PurchaseItem from "./views/PurchaseItem";
 import EquipArmor from "./views/EquipArmor";
 import EquipWeapon from "./views/EquipWeapon";
 import RemoveArmor from "./views/RemoveArmor";
 import RemoveWeapon from "./views/RemoveWeapon";
+import AllActiveQuests from "./views/AllActiveQuests";
+import AllInactiveQuests from "./views/AllInactiveQuests";
+import MakeQuestActive from "./views/MakeQuestActive";
+import MakeQuestInactive from "./views/MakeQuestInactive";
 
 function App() {
   return (
@@ -73,6 +78,18 @@ function App() {
                 <AllQuestsActive />
               </Route>
 
+              <Route exact path="/AllQuestsInactive">
+                <AllQuestsInactive />
+              </Route>
+
+              <Route exact path="/AllActiveQuests">
+                <AllActiveQuests />
+              </Route>
+
+              <Route exact path="/AllInactiveQuests">
+                <AllInactiveQuests />
+              </Route>
+
               <Route
                 path="/PurchaseItem"
                 exact
@@ -96,7 +113,7 @@ function App() {
                   return <EquipWeapon {...props} />;
                 }}
               />
-              
+
               <Route
                 path="/RemoveArmor"
                 exact
@@ -113,6 +130,21 @@ function App() {
                 }}
               />
 
+              <Route
+                path="/MakeQuestActive"
+                exact
+                component={(props) => {
+                  return <MakeQuestActive {...props} />;
+                }}
+              />
+
+              <Route
+                path="/MakeQuestInactive"
+                exact
+                component={(props) => {
+                  return <MakeQuestInactive {...props} />;
+                }}
+              />
             </Switch>
           </BrowserRouter>
         </div>

@@ -28,13 +28,7 @@ const getCharacterNames = async () => {
     return Query("SELECT CharacterName FROM family")
 }
 
-const makeQuestActive = async () => {
-    return Query("UPDATE Quests SET Active = 1 WHERE QuestID = ?", [ID])
-};
 
-const makeQuestInactive = async () => {
-    return Query("UPDATE Quests SET Active = 0 WHERE QuestID = ?", [ID])
-};
 
 
 
@@ -52,6 +46,5 @@ export {
    getCharacterStats,
    getCharacterShop,
    getCharacterNames,
-   makeQuestActive,
-   makeQuestInactive,
+   
 }

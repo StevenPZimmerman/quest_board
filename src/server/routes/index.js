@@ -2,6 +2,7 @@ const express = require("express");
 const {
   getAll,
   getActiveQuests,
+  getInactiveQuests,
   getCharacterStats,
   getCharacterShop,
   getCharacterNames,
@@ -28,6 +29,16 @@ router.get("/quests", async (req, res, next) => {
     next(error);
   }
 });
+
+router.get("/inactiveQuests", async (req, res, next) => {
+   try {
+     let data = await getInactiveQuests();
+     res.json(data);
+   } catch (error) {
+     next(error);
+   }
+ });
+
 router.get("/quests/:id", async (req, res, next) => {
   try {
     let data = await getOneQuest();
@@ -64,18 +75,20 @@ router.get("/characters", async (req, res, next) => {
   }
 });
 
-router.get("/questActive", async (req, res, next) => {
+router.get("/questActive/:ID", async (req, res, next) => {
   try {
-    let data = await makeQuestActive();
+   let {ID} = req.params;
+    let data = await makeQuestActive(ID);
     res.json(data);
   } catch (error) {
     next(error);
   }
 });
 
-router.get("/questInactive", async (req, res, next) => {
+router.get("/questInactive/:ID", async (req, res, next) => {
   try {
-    let data = await makeQuestInactive();
+   let {ID} = req.params;
+    let data = await makeQuestInactive(ID);
     res.json(data);
   } catch (error) {
     next(error);

@@ -3,18 +3,18 @@ import Query from "../models";
 
 
 const makeAllQuestsActive = async () => {
-    return Query("UPDATE Quests SET Active = 1 WHERE QuestID = 4     ")
+    return Query("UPDATE Quests SET Active = 1 WHERE Active = 0 ")
 };
 
 const makeAllQuestsInactive = async () => {
-    return Query("UPDATE * Quests SET Active = 0 ")
+    return Query("UPDATE Quests SET Active = 0 WHERE Active = 1 ")
 };
 
-const makeQuestActive = async () => {
+const makeQuestActive = async (ID) => {
     return Query("UPDATE Quests SET Active = 1 WHERE QuestID = ?", [ID])
 };
 
-const makeQuestInactive = async () => {
+const makeQuestInactive = async (ID) => {
     return Query("UPDATE Quests SET Active = 0 WHERE QuestID = ?", [ID])
 };
 

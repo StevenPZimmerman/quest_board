@@ -13,11 +13,14 @@ const Home = () => {
 
   return (
     <div>
+
+      
+
       {quests.map((quest) => (
-        <div>
+        
           <div
-            className="card border-dark mb-3"
-            style={{ width: "18rem", marginTop: "2rem", marginLeft: "2rem" }}
+            className="card border-dark mb-3 flex-wrap" 
+            style={{ width: "12rem", marginTop: "2rem", marginLeft: "2rem" }}
           >
             <div className="card-body">
               <h3 className="card-title">{quest.QuestGiver}</h3>
@@ -27,8 +30,9 @@ const Home = () => {
               <p className="card-text">{quest.Reward} XP</p>
             </div>
           </div>
-        </div>
+        
       ))}
+      
       <Link to="/Login" className="activeNav" className="navLink">
         <img className="image" src="../img/ManageSign.jpg" alt="welcomeImage" />
       </Link>

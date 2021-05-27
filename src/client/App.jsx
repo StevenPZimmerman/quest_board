@@ -8,6 +8,9 @@ import Shop from "./views/Shop";
 import Dungeon from "./views/Dungeon";
 import Login from "./views/Login";
 import Manager from "./views/Manager";
+import Currency from "./views/Currency";
+import Documentation from "./views/Documentation";
+import QuestComplete from "./views/QuestComplete";
 import PurchaseItem from "./views/PurchaseItem";
 
 function App() {
@@ -42,6 +45,18 @@ function App() {
 
               <Route exact path="/Manager">
                 <Manager />
+              </Route>
+
+              <Route exact path="/Currency">
+                <Currency />
+              </Route>
+
+              <Route exact path="/Documentation">
+                <Documentation />
+              </Route>
+
+              <Route exact path="/QuestComplete">
+                <QuestComplete />
               </Route>
 
               <Route path="/PurchaseItem"

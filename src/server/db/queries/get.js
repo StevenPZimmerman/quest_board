@@ -4,12 +4,16 @@ const getAll = async () => {
     return Query("SELECT * FROM quests");
 };
 
-const getOne = async (id) => {
-    return Query("SELECT * FROM quests WHERE idquests = ?", [id])
+const getOne = async (ID) => {
+    return Query("SELECT * FROM quests WHERE idquests = ?", [ID])
 };
 
 const getActiveQuests = async () => {
     return Query("SELECT * FROM quests WHERE Active = 1");
+};
+
+const getInactiveQuests = async () => {
+    return Query("SELECT * FROM quests WHERE Active = 0");
 };
 
 const getCharacterStats = async () => {
@@ -24,6 +28,15 @@ const getCharacterNames = async () => {
     return Query("SELECT CharacterName FROM family")
 }
 
+const makeQuestActive = async () => {
+    return Query("UPDATE Quests SET Active = 1 WHERE QuestID = ?", [ID])
+};
+
+const makeQuestInactive = async () => {
+    return Query("UPDATE Quests SET Active = 0 WHERE QuestID = ?", [ID])
+};
+
+
 
 const example = async () => {
     return Query("UPDATE something FROM table WHERE something; UPDATE something FROM sametable WHERE something else")
@@ -35,7 +48,10 @@ export {
     getAll,
     getOne,
    getActiveQuests,
+   getInactiveQuests,
    getCharacterStats,
    getCharacterShop,
    getCharacterNames,
+   makeQuestActive,
+   makeQuestInactive,
 }

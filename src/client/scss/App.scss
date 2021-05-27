@@ -12,6 +12,11 @@
     font-size: 120%;
   }
 
+.flexColumn{
+  display:flex;
+  flex-direction: column;
+}
+
   .statBlock {
       margin-left: 12%;
     font-weight: 800;
@@ -36,6 +41,6 @@ display:flex;
 
   .itemCard{
     display:flex;
-    
+
   }
 

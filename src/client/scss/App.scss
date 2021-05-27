@@ -29,12 +29,21 @@ display:flex;
 
   }
 
+  .inventoryLinks {
+    text-decoration: none;
+    color: black;
+  }
+
   .equipped {
+    display:flex;
+  flex-direction: column;
     margin-left: 12%;
     font-weight: 800;
   }
 
   .inventory{
+    display:flex;
+  flex-direction: column;
     margin-left: 12%;
     font-weight: 800;
   }

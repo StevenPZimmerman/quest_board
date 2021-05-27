@@ -17,7 +17,10 @@ const Manager = () => {
 <h4>Manage Quests</h4>
 <br />
 <br />
+<Link to= "/AllQuestsActive">All Quests Active</Link>
 
+
+    
 
 
         </div>

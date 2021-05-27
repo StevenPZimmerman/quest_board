@@ -4,81 +4,16 @@ import "../scss/App.scss";
 import { useHistory } from "react-router";
 
 const Dungeon = () => {
-  const [shop, setShop] = React.useState([]);
-
-  React.useEffect(() => {
-    fetch("/shop")
-      .then((res) => res.json())
-      .then((data) => setShop(data));
-  }, []);
-
-  let shopList = 0;
-
-  const [stats, setStats] = React.useState([]);
-
-  React.useEffect(() => {
-    fetch("/stats")
-      .then((res) => res.json())
-      .then((data) => setStats(data));
-  }, []);
-
-  let silver = [];
-
-  stats.map((stat) => {
-    console.log(stat.Currency);
-    console.log(silver);
-    silver.push(stat.Currency);
-  });
-
-  console.log(silver);
-  console.log(silver[0]);
-
+  
   return (
     <div>
-      {shop.map((equip) => {
-        if (equip.Equipped == 0 && shopList < 4) {
-          shopList++;
+<h2>Hey, be careful, it's like, stupid dangerous in there.</h2>
 
-          return (
-            <div
-              className="card border-dark mb-3"
-              style={{ width: "18rem", marginTop: "2rem", marginLeft: "2rem" }}
-            >
-              <div className="card-body">
-                <div className="itemCard">
-                  <div className="itemCardInfo">
-                    <h3 className="card-title">{equip.InventoryName}</h3>
-                    <h5 className="card-title">{equip.Price}</h5>
-                    <NavLink
-                      to={{
-                        pathname:
-                          equip.Price <= silver[0]
-                            ? "/PurchaseItem"
-                            : "/Dungeon",
-                        state: { Price: equip.Price, ID: equip.InventoryID },
-                      }}
-                    >
-                      Purchase
-                    </NavLink>
-
-                    <p>{equip.InventoryID}</p>
-                  </div>
-                  <div className="itemCardImage">
-                    <img
-                      className="image"
-                      src={equip.Image}
-                      alt={equip.InventoryName}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        }
-      })}
-      <Link to="/Login" className="activeNav" className="navLink">
-        <img className="image" src="../img/ManageSign.jpg" alt="welcomeImage" />
+<Link to="/Dungeon1" className="activeNav" className="navLink">
+        <img className="image" src="../img/dungeon.jpg" alt="welcomeImage" />
       </Link>
+
+
     </div>
   );
 };

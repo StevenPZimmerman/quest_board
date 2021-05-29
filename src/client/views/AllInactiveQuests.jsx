@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link, NavLink } from "react-router-dom";
+import {useHistory} from "react-router";
 
 const AllInactiveQuests = () => {
     const [quests, setQuests] = React.useState([]);
+    const history = useHistory();
 
     React.useEffect(() => {
         fetch("/inactiveQuests")
@@ -13,11 +15,12 @@ const AllInactiveQuests = () => {
 
 
     return (
-        <div>
+        <div className="row">
+            <button className="btn btn-sm btn-outline dark" onClick={() => history.goBack()}>Back</button>
              {quests.map((quest) => (
         
         <div
-          className="card border-dark mb-3 flex-wrap" 
+          className="card border-dark mb-3 col-md-3" 
           style={{ width: "12rem", marginTop: "2rem", marginLeft: "2rem" }}
         >
           <div className="card-body">

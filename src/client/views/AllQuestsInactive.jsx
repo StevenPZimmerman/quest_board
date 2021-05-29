@@ -7,7 +7,10 @@ const AllQuestsInactive = () => {
     React.useEffect(() => {
         fetch("/allQuestsInactive")
           .then((res) => res.json())
-        //   .then((data) => setShop(data));
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((err) => console.log(err));
       }, []);
 
 

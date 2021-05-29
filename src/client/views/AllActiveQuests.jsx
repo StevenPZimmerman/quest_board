@@ -13,11 +13,11 @@ const AllActiveQuests = () => {
 
 
     return (
-        <div>
+        <div className="row">
              {quests.map((quest) => (
         
         <div
-          className="card border-dark mb-3 flex-wrap" 
+          className="card border-dark mb-3 col-md-3" 
           style={{ width: "12rem", marginTop: "2rem", marginLeft: "2rem" }}
         >
           <div className="card-body">

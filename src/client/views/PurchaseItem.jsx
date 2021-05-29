@@ -3,7 +3,7 @@ import { useHistory, useParams } from "react-router";
 
 const PurchaseItem = ({
   location: {
-    state: { Price, ID },
+    state: { Price, ID, Name, Image },
   },
 }) => {
   // console.log(Price)
@@ -32,7 +32,13 @@ const PurchaseItem = ({
 
   return (
     <div>
-      <h2>Purchased</h2>
+      <h2>You Have Purchased</h2>
+      <h2>{Name}</h2>
+      <img
+                          className="image"
+                          src={Image}
+                          alt={Name}
+                        />
     </div>
   );
 };

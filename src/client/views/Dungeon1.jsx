@@ -6,11 +6,35 @@ import { useHistory } from "react-router";
 const Dungeon1 = () => {
   
   return (
-    <div>
-<p>You are in the dungeon.</p>
+    <div className="dungeon1">
 
 
-      
+<br />     
+<br />
+<br />
+<br />
+<h1 className="text-center">BURLYWOOD</h1>
+
+<br />
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />     
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />  
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />  
     </div>
   );
 };

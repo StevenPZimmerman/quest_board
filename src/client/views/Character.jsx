@@ -35,7 +35,13 @@ const Character = () => {
       characterStats.push(stat.Mind);
     });
   }
+  // demo code
+  // let level = 1;
+  if(characterStats[3] > 10){
+    characterStats.splice(2, 1, 2)
+    characterStats.splice(4, 1, 12)
 
+  }
 
   console.log(characterStats);
 

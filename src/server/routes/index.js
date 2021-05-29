@@ -16,7 +16,11 @@ const {
   purchaseItemCost,
   removeArmor,
    removeWeapon,
-   equipItem
+   equipItem,
+   questComplete,
+   questCompleteBounty,
+  questCompleteReward,
+  levelUpHP,
 } = require("../db/queries/update");
 
 const router = express.Router();
@@ -160,13 +164,45 @@ router.get("/allQuestsActive", async (req, res, next) => {
      next(error);
    }
  });
-
  
-  
+ 
+ router.get("/questComplete/:Bounty:Reward", async (req, res, next) => {
+   try {
+      let {Bounty, Reward} = req.params;
+     let data = await questComplete(Bounty, Reward);
+     res.json(data);
+   } catch (error) {
+     next(error);
+   }
+ });
+ router.get("/questCompleteBounty/:Bounty", async (req, res, next) => {
+   try {
+      let {Bounty} = req.params;
+     let data = await questCompleteBounty(Bounty);
+     res.json(data);
+   } catch (error) {
+     next(error);
+   }
+ });
+
+ router.get("/questCompleteReward/:Reward", async (req, res, next) => {
+   try {
+      let {Reward} = req.params;
+     let data = await questCompleteReward(Reward);
+     res.json(data);
+   } catch (error) {
+     next(error);
+   }
+ });
 
 
-
-
-
+ router.get("/levelUpHP", async (req, res, next) => {
+   try {
+     let data = await levelUpHP();
+     res.json(data);
+   } catch (error) {
+     next(error);
+   }
+ });
 
 export default router;

@@ -23,6 +23,8 @@ import AllActiveQuests from "./views/AllActiveQuests";
 import AllInactiveQuests from "./views/AllInactiveQuests";
 import MakeQuestActive from "./views/MakeQuestActive";
 import MakeQuestInactive from "./views/MakeQuestInactive";
+import ViewQuest from "./views/ViewQuest";
+
 
 function App() {
   return (
@@ -68,10 +70,6 @@ function App() {
 
               <Route exact path="/Documentation">
                 <Documentation />
-              </Route>
-
-              <Route exact path="/QuestComplete">
-                <QuestComplete />
               </Route>
 
               <Route exact path="/AllQuestsActive">
@@ -145,6 +143,25 @@ function App() {
                   return <MakeQuestInactive {...props} />;
                 }}
               />
+
+              <Route
+                path="/ViewQuest"
+                exact
+                component={(props) => {
+                  return <ViewQuest {...props} />;
+                }}
+              />
+
+              <Route
+                path="/QuestComplete"
+                exact
+                component={(props) => {
+                  return <QuestComplete {...props} />;
+                }}
+              />
+
+              
+
             </Switch>
           </BrowserRouter>
         </div>

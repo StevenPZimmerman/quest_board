@@ -14,10 +14,9 @@ const Login = () => {
 
 
 return (
-    <div>
-<p>You made it to the login screen.</p>
-<input type="text" name="familyLogin" id="familyLogin" />
-<input type="text" name="familyPassword" id="familyPassword" />
+    <div className="text-center">
+
+
 
 <h3>Select Hero</h3>
 {characters.map((character) =>(
@@ -30,9 +29,9 @@ return (
 
 <br />
  <h2>Quest Manager</h2>
- <input type="number" name="enterQM" id="enterQM" placeholder="PIN"/>
+ <input type="password" name="enterQM" id="enterQM" placeholder="PIN"/>
  <Link to="/Manager" className="activeNav" className="navLink">
-        <img className="image" src="../img/sign_1.jpg" alt="welcomeImage" />
+        <img className="image" src="../img/ManageSign.jpg" alt="welcomeImage" />
       </Link>
 
 
